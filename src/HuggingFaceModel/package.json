@@ -1,0 +1,16 @@
+{
+  "name": "huggingfacemodel",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "Model.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@huggingface/inference": "^2.6.1",
+    "cors": "^2.8.5"
+  }
+}
