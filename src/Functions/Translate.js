@@ -1,5 +1,4 @@
 import axios from "axios";
-import {ref} from "vue";
 
 const translate = async (targetLanguage, displayedContent, translatedtxt, selectedLanguage) => {
     const selectedLanguageCode = targetLanguage.value.find((language) => language.id === selectedLanguage.value)?.id;
