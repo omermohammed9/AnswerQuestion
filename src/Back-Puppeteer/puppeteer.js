@@ -1,3 +1,4 @@
+//To read the text content from a web page
 const express= require('express');
 const puppeteer=require('puppeteer');
 const cors = require('cors');
@@ -26,8 +27,7 @@ const WebScraping = async (url) => {
         Array.from(document.querySelectorAll('span'), (e) =>e.innerText)
     );
     const details = paragraphs.concat(h1).concat(h2).concat(h3).concat(span);
-    const text = details.join('\n');
-    return text;
+    return details.join('\n');
 }
 app.post('/url', async (req,res)=>{
     const data = await WebScraping(req.body.url);

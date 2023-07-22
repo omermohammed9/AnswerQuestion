@@ -1,13 +1,9 @@
-
-//const express = require('express');
-// const fetch = require('node-fetch');
-import fetch from "node-fetch";
-import express from "express";
-import cors from "cors";
+import express from 'express';
+import cors from 'cors';
+import fetch from 'node-fetch';
 
 const app = express();
 const port = 3000; // Choose a suitable port number
-
 app.use(express.json());
 app.use(cors({origin: '*'}));
 
@@ -16,7 +12,7 @@ app.post('/translate', async (req, res) => {
     const apiKey = 'AIzaSyCEdCUnms26B6jv6fwq5MWv1A5Ji8fSlUY';
     const apiUrl = 'https://translation.googleapis.com/language/translate/v2';
 
-    console.log("text", text);
+    //console.log("text", text);
     try {
         const response = await fetch(`${apiUrl}?q=${encodeURIComponent(text)}&target=${targetLanguage}&key=${apiKey}`, {
             method: 'POST',
