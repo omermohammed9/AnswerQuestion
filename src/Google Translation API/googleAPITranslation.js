@@ -21,9 +21,7 @@ app.post('/translate', async (req, res) => {
             },
         });
         const data = await response.json();
-        if (data.error) {
-            throw new Error(`Translation failed: ${data.error.message}`);
-        }
+        if (data.error) throw new Error(`Translation failed: ${data.error.message}`);
         const translatedText = data.data.translations[0].translatedText;
         res.json({ translatedText });
     } catch (error) {
@@ -55,7 +53,7 @@ app.listen(port, () => {
 
 
 
-// // Function to translate text using the Google Translate API
+// // Function to translate text using the Google test API
 // async function translateText(text, targetLanguage) {
 //     const apiKey = 'AIzaSyCEdCUnms26B6jv6fwq5MWv1A5Ji8fSlUY';
 //     const apiUrl = 'https://translation.googleapis.com/language/translate/v2';
