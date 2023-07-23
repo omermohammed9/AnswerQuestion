@@ -9,7 +9,8 @@ app.use(cors({origin: '*'}));
 
 app.post('/translate', async (req, res) => {
     const { text, targetLanguage } = req.body;
-    const apiKey = 'AIzaSyCEdCUnms26B6jv6fwq5MWv1A5Ji8fSlUY';
+    //AIzaSyCEdCUnms26B6jv6fwq5MWv1A5Ji8fSlUY
+    const apiKey = 'AIzaSyC-1DxVNl18bgVQjluBC2zM7ww8QnS6w28';
     const apiUrl = 'https://translation.googleapis.com/language/translate/v2';
 
     //console.log("text", text);
