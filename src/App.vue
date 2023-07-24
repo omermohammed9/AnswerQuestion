@@ -1,6 +1,8 @@
 <template>
   <div>
-   <Header></Header>
+    <div>
+      <Header></Header>
+    </div>
     <div class="container mx-auto p-4">
       <div class="flex flex-col items-center mb-4">
         <Text @displayContent= "showText"> </Text>
