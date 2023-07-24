@@ -28,4 +28,4 @@ coverage
 *.sw?
 
 # Exclude .env file
-.env
+*.env
