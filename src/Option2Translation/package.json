@@ -1,0 +1,16 @@
+{
+  "name": "option2translation",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "translate": "^2.0.2",
+    "translatte": "^3.0.1"
+  }
+}
