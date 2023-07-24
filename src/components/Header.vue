@@ -8,7 +8,6 @@
       <h2 class="text-2xl font-bold text-center mx-5">Description</h2>
     </div>
   <div class="container">
-<!--    <h2>This is a Text Container</h2>-->
     <p class="animated-text">1-Quick Answers: Have a question? Use our pre-trained models to get accurate responses. Simply type your question in the provided input field, and our models will provide you with the answer.</p>
     <p class="animated-text">2-Easy Content Access: Want to read text content from a webpage? Copy the URL and paste it into the designated input field. Our website will fetch the content for you to read, making it hassle-free.</p>
     <p class="animated-text">3-Reading TXT Files: Need to access content from a local TXT file on your computer? No worries! Upload the TXT file using the provided button, and we'll display the content for you.</p>

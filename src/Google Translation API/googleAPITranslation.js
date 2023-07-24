@@ -7,29 +7,31 @@ const port = 3000; // Choose a suitable port number
 app.use(express.json());
 app.use(cors({origin: '*'}));
 
-app.post('/translate', async (req, res) => {
-    const { text, targetLanguage } = req.body;
-    //AIzaSyCEdCUnms26B6jv6fwq5MWv1A5Ji8fSlUY
-    const apiKey = 'AIzaSyC-1DxVNl18bgVQjluBC2zM7ww8QnS6w28';
-    const apiUrl = 'https://translation.googleapis.com/language/translate/v2';
+app.post('/translate',
+    async (req, res) => {
+        const {text, targetLanguage} = req.body;
 
-    //console.log("text", text);
-    try {
-        const response = await fetch(`${apiUrl}?q=${encodeURIComponent(text)}&target=${targetLanguage}&key=${apiKey}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-        const data = await response.json();
-        if (data.error) throw new Error(`Translation failed: ${data.error.message}`);
-        const translatedText = data.data.translations[0].translatedText;
-        res.json({ translatedText });
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'An error occurred during translation.' });
-    }
-});
+        const apiKey = process.env.API_KEY;
+        const apiUrl = 'https://translation.googleapis.com/language/translate/v2';
+
+        //console.log("text", text);
+        try {
+            const response = await fetch(`${apiUrl}?q=${encodeURIComponent(text)}&target=${targetLanguage}&key=${apiKey}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            const data = await response.json();
+            if (data.error) throw new Error(`Translation failed: ${data.error.message}`);
+            const translatedText = data.data.translations[0].translatedText;
+            res.json({translatedText});
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({error: 'An error occurred during translation.'});
+        }
+    });
 
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
