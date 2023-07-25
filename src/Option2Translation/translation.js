@@ -1,4 +1,4 @@
-//Using translate library that is more modular
+//Using Another translate library that is more modular
 import translate from "translate";
 import express from "express";
 import cors from "cors";
@@ -10,7 +10,7 @@ const port = 3000;
 app.use(express.json());
 app.use(cors({origin: '*'}));
 
-app.post("/translate", async (req, res) => {
+app.post(`/translate`, async (req, res) => {
     try {
         const { text, targetLanguage } = req.body;
 
