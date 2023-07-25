@@ -27,7 +27,6 @@ app.post(`/translate`, async (req, res) => {
     }
 });
 
-// Start the server
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
@@ -41,13 +40,10 @@ app.listen(port, () => {
 
 // ----------------------------------------------------------------
 // import translatte from "translatte";
-//
-//
 // const t = `Remember to replace 'fr' with the desired target language code in the /translate route handler. You can now run your Express.js application using node app.js or node index.js (depending on your main file name) and access the /translate route to see the translated text in the response.`
 // const test = translatte(t, {to: 'fr'}).then(res => {
 //     console.log(res.text);
 // }).catch(err => {
 //     console.error(err);
 // });
-//
 // export default test;
