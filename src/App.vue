@@ -98,7 +98,5 @@ const QuestionAnswerM2 = async (question2) => {
   }
 };
 
-
-
 </script>
 

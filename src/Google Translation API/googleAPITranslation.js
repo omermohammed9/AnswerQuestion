@@ -1,60 +1,45 @@
-import express from 'express';
-import cors from 'cors';
-import fetch from 'node-fetch';
+/* This is functional but it is more restricted and limited*/
+// import express from 'express';
+// import cors from 'cors';
+// import fetch from 'node-fetch';
 
-const app = express();
-const port = 3000; // Choose a suitable port number
-app.use(express.json());
-app.use(cors({origin: '*'}));
-
-app.post('/translate',
-    async (req, res) => {
-        const {text, targetLanguage} = req.body;
-
-        const apiKey = process.env.API_KEY;
-        const apiUrl = 'https://translation.googleapis.com/language/translate/v2';
-
-        //console.log("text", text);
-        try {
-            const response = await fetch(`${apiUrl}?q=${encodeURIComponent(text)}&target=${targetLanguage}&key=${apiKey}`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
-
-            const data = await response.json();
-            if (data.error) throw new Error(`Translation failed: ${data.error.message}`);
-            const translatedText = data.data.translations[0].translatedText;
-            res.json({translatedText});
-        } catch (error) {
-            console.error(error);
-            res.status(500).json({error: 'An error occurred during translation.'});
-        }
-    });
-
-app.listen(port, () => {
-    console.log(`Server is listening on port ${port}`);
-});
+// const app = express();
+// const port = 3000; // Choose a suitable port number
+// app.use(express.json());
+// app.use(cors({origin: '*'}));
 
 
+// const apiKey = process.env.APIKEY;
+// console.log(process.env.APIKEY);
+//
+// const apiUrl = 'https://translation.googleapis.com/language/translate/v2';
+// app.post('/translate',
+//     async (req, res) => {
+//         const {text, targetLanguage} = req.body;
+//         //console.log("text", text);
+//         try {
+//             const response = await fetch(`${apiUrl}?q=${encodeURIComponent(text)}&target=${targetLanguage}&key=${apiKey}`, {
+//                 method: 'POST',
+//                 headers: {
+//                     'Content-Type': 'application/json',
+//                 },
+//             });
+//
+//             const data = await response.json();
+//             if (data.error) throw new Error(`Translation failed: ${data.error.message}`);
+//             const translatedText = data.data.translations[0].translatedText;
+//             res.json({translatedText});
+//         } catch (error) {
+//             console.error(error);
+//             res.status(500).json({error: 'An error occurred during translation.'});
+//         }
+//     });
+//
+// app.listen(port, () => {
+//     console.log(`Server is listening on port ${port}`);
+// });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//-------------------------------------------------------------------------
 
 // // Function to translate text using the Google test API
 // async function translateText(text, targetLanguage) {
