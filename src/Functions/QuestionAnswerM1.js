@@ -1,6 +1,8 @@
-import {qnamodel} from "@/qnamodel";
+// import {qnamodel} from "@/qnamodel";
+import {model} from "@/qnamodel";
 
 const askQuestionM1 = async (question, displayedContent) => {
+    const qnamodel = await model();
     const answers = await qnamodel.findAnswers(question.value, displayedContent.value);
     console.log(answers);
     if (answers.length >= 4) {
